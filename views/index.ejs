@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body class="passport-page member-page min-h-screen bg-slate-50 text-slate-800">
+    <%- include('includes/header') %>
+    <nav class="site-nav border-b border-slate-200 bg-white">
+        <div class="site-nav-inner container mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-3">
+            <button type="button" data-target="#navbar" data-toggle="collapse" aria-expanded="false" aria-controls="navbar" class="block rounded border border-slate-400 p-2 text-slate-600 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 sm:hidden">
+                <span class="sr-only">Toggle navigation</span>
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            <a class="site-brand text-lg font-semibold text-slate-900" href="#">PassportApp</a>
+            <div id="navbar" class="hidden w-full sm:block sm:w-auto">
+                <ul class="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-6">
+                    <li><a href="/users/logout" class="nav-link text-sm font-medium text-slate-600 hover:text-blue-700">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="member-main container mx-auto max-w-6xl px-4 py-12 sm:py-16">
+        <div class="member-welcome starter-template space-y-3 border-l-4 border-blue-700 pl-5">
+            <h1 class="member-title text-3xl font-semibold text-slate-900">Member <%= user.name %></h1>
+            <p class="member-copy text-base text-slate-600">Welcome to your member area!</p>
+        </div>
+    </main>
+    <%- include('includes/footer') %>
+    <script>
+        const navbarToggle = document.querySelector('[data-toggle="collapse"]');
+        const navbar = document.querySelector(navbarToggle.dataset.target);
+
+        navbarToggle.addEventListener('click', () => {
+            const isExpanded = navbarToggle.getAttribute('aria-expanded') === 'true';
+            navbarToggle.setAttribute('aria-expanded', String(!isExpanded));
+            navbar.classList.toggle('hidden', isExpanded);
+        });
+    </script>
+</body>
+</html>

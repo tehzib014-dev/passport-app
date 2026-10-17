@@ -1,0 +1,33 @@
+{
+  "name": "project-1-passport-app",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tehzib014-dev/passport-app.git"
+  },
+  "author": "Tehzib Imran",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tehzib014-dev/passport-app/issues"
+  },
+  "homepage": "https://github.com/tehzib014-dev/passport-app#readme",
+  "description": "",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "body-parser": "^2.3.0",
+    "connect-flash": "^0.1.1",
+    "ejs": "^7.0.1",
+    "express": "^5.3.0",
+    "express-messages": "^1.0.1",
+    "express-session": "^1.19.0",
+    "express-validator": "^2.20.8",
+    "mongojs": "^3.1.0",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0"
+  }
+}
